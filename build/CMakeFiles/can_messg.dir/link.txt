@@ -1,0 +1,2 @@
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ar qc libcan_messg.a CMakeFiles/can_messg.dir/src/can_messg.c.o
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ranlib libcan_messg.a

@@ -24,6 +24,14 @@
 
 #define CAN_INTERFACE "can0"
 
+/* ECU answers codes */
+
+#define PID_01_POSITIVE 0x41 /* 0x01 + 0x40 */
+
+/* PID 01 request data code */
+
+#define ENGINE_SPEED_REQUEST 0x0c
+
 /* -------------- REQUESTS ------------------------------ */
 
 void generate_engine_speed_request_data ( struct can_frame *frame_data );
@@ -50,7 +58,7 @@ int receive_engine_speed ( struct can_frame *frame, int socket_descriptor );
 
     \retval 0 - positive response from ECU, engine speed not read correctly
 */
-int interpet_ecu_answer_engine_speed ( struct can_frame *frame, int socket_descriptor );
+int interpet_ecu_answer_engine_speed ( struct can_frame *frame );
 
 /*!
     \brief

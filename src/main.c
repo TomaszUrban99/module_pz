@@ -60,7 +60,9 @@ int main(int argc, char** argv){
 
     struct can_frame frame;
 
-    generate_engine_speed_request_data(&frame);
+    receive_engine_speed(&frame, socket_desc);
+
+    printf("%s%d\n", "Obroty: ", interpet_ecu_answer_engine_speed(&frame));
 
     print_can_frame(&frame);
 

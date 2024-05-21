@@ -2,11 +2,12 @@
 
 void generate_engine_speed_request_data ( struct can_frame *frame_data ){
 
+    /* Address */
     frame_data->can_id = CAN_BROADCAST_ID;
 
     frame_data->data[0] = 0x02; /* Size of packet */
     frame_data->data[1] = 0x01; /* Service type */
-    frame_data->data[2] = 0x0c; /* PID 0x0c - get engine speed request data */
+    frame_data->data[2] = ENGINE_SPEED_REQUEST; /* PID 0x0c - get engine speed request data */
 
     /* Fill frame_data->data with data */
     for ( int i = 3; i < CAN_MAX_DLEN; ++i ){
@@ -54,12 +55,38 @@ int receive_engine_speed ( struct can_frame *frame, int socket_descriptor ){
     }
 }
 
+/*!
+    \brief interpret ecu response on engine speed
+*/
+int interpet_ecu_answer_engine_speed ( struct can_frame *frame ){
+
+    int response_size = frame->data[0];
+
+    /* Check if ECU response is positive */
+    if ( frame->data[1] == PID_01_POSITIVE ){
+
+        /* Check if response has engine speed code */
+        if ( frame->data[2] == ENGINE_SPEED_REQUEST ){
+            
+            /* Return engine speed, result is cast to int value */
+            return (int) (0.25 * (256 * frame->data[3] + frame->data[4]));
+        }
+    }
+    /* If ECU response is not positive return negative value */
+    else{
+        fprintf(stderr, "ecu_answer: negative response");
+        return -1;
+    }
+
+}
+
 void print_can_frame ( struct can_frame *frame){
 
     printf("%x\n", frame->can_id);
     printf("\n");
 
     for ( int i = 0; i < CAN_MAX_DLEN; ++i ){
+        printf("%d%s", i, " ");
         printf("%x\n", frame->data[i]);
     }
 }

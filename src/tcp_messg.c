@@ -1,6 +1,6 @@
 #include "tcp_messg.h"
 
-int establish_connection ( char **argv, int tcp_socket_descriptor ){
+int establish_connection ( char **argv, int *tcp_socket_descriptor ){
 
     printf("Configuring remote address....\n");
 
@@ -20,10 +20,10 @@ int establish_connection ( char **argv, int tcp_socket_descriptor ){
     printf("Creating socket...\n");
     
     /* Create new socket */
-    tcp_socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
+    *tcp_socket_descriptor = socket(AF_INET, SOCK_STREAM, 0);
 
     /* Check if socket has been created */
-    if ( tcp_socket_descriptor < 0 ){
+    if ( *tcp_socket_descriptor < 0 ){
         fprintf(stderr,"%s\n","SOCKET: failed to create");
         return SOCKET_ERROR;
     }
@@ -31,7 +31,7 @@ int establish_connection ( char **argv, int tcp_socket_descriptor ){
     printf("Connecting...\n");
 
     /* Connecting */
-    if ( connect(tcp_socket_descriptor, peer_address->ai_addr, peer_address->ai_addrlen) ){
+    if ( connect(*tcp_socket_descriptor, peer_address->ai_addr, peer_address->ai_addrlen) ){
         fprintf(stderr, "connect() failed");
         return CONNECT_ERROR;
     }
@@ -42,6 +42,11 @@ int establish_connection ( char **argv, int tcp_socket_descriptor ){
     return CONNECTED;
 }
 
-int send_to_server ( int tcp_socket_descriptor ){
+int send_to_server ( int tcp_socket_descriptor, char *packet_to_send ){
 
+    int size_of_message = strlen(packet_to_send);
+
+    int bytes = send(tcp_socket_descriptor, packet_to_send, size_of_message, 0);
+
+    return bytes;
 }

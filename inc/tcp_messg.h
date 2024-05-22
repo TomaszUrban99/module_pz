@@ -23,7 +23,7 @@
 /*!
     \brief Establish TCP connection
 */
-int establish_connection ( char **argv, int tcp_socket_descriptor );
+int establish_connection ( char **argv, int *tcp_socket_descriptor);
 
 /*!
     \brief Send packet to remote server
@@ -34,6 +34,6 @@ int establish_connection ( char **argv, int tcp_socket_descriptor );
     \retval number_of_bytes - number of send bytes
     \retval -1 - failed to send
 */
-int send_to_server ( int tcp_socket_descriptor );
+int send_to_server ( int tcp_socket_descriptor, char *packet_to_send );
 
 #endif

@@ -16,6 +16,7 @@
 
 #include "can_messg.h"
 #include "packet.h"
+#include "tcp_messg.h"
 
 int main(int argc, char** argv){
 
@@ -79,12 +80,16 @@ int main(int argc, char** argv){
     struct packet data_packet;
 
     data_packet.lat_att = north;
-    data_packet.latitude = 98.000;
+    data_packet.latitude = 8.000;
    
 
     char message_string[MESSAGE_LENGTH];
 
+    int socket_desc;
+
     prepare_message(&data_packet,message_string);
+    establish_connection(argv,&socket_desc);
+    printf("%d\n", send_to_server(socket_desc,message_string));
 
     return 0;
 }

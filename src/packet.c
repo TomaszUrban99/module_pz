@@ -40,7 +40,8 @@ void float_to_array ( float number, int integer_part,
 
         digital = number / ( pow( 10, integer_part - 1 - i));
         number = number - digital * pow( 10, integer_part - 1 - i);
-        
+
+        /* Save digit in array */        
         digit_array[i] = digit_to_char( (int) digital);
     }
 
@@ -57,6 +58,7 @@ void float_to_array ( float number, int integer_part,
             digital = number / ( pow(10, precison -1 - i));
             number = number - digital * pow ( 10, precison -1 -i );
 
+            /* Save digit in array */
             digit_array[integer_part + 1 + i] = digit_to_char(digital);
         }
 

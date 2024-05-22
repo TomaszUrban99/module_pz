@@ -117,4 +117,5 @@ CMakeFiles/obd_main.dir/src/main.c.o: \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/fp-logb.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/fp-fast.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/mathcalls-helper-functions.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/mathcalls.h
+ /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/mathcalls.h \
+ /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc/tcp_messg.h

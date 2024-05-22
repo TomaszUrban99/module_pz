@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named packet
+
+# Build rule for target.
+packet: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 packet
+.PHONY : packet
+
+# fast build rule for target.
+packet/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/packet.dir/build.make CMakeFiles/packet.dir/build
+.PHONY : packet/fast
+
+#=============================================================================
 # Target rules for targets named can_messg
 
 # Build rule for target.
@@ -128,6 +141,19 @@ can_messg: cmake_check_build_system
 can_messg/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/can_messg.dir/build.make CMakeFiles/can_messg.dir/build
 .PHONY : can_messg/fast
+
+#=============================================================================
+# Target rules for targets named tcp_messg
+
+# Build rule for target.
+tcp_messg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tcp_messg
+.PHONY : tcp_messg
+
+# fast build rule for target.
+tcp_messg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_messg.dir/build.make CMakeFiles/tcp_messg.dir/build
+.PHONY : tcp_messg/fast
 
 #=============================================================================
 # Target rules for targets named obd_main
@@ -190,6 +216,54 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/obd_main.dir/build.make CMakeFiles/obd_main.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/packet.o: src/packet.c.o
+.PHONY : src/packet.o
+
+# target to build an object file
+src/packet.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/packet.dir/build.make CMakeFiles/packet.dir/src/packet.c.o
+.PHONY : src/packet.c.o
+
+src/packet.i: src/packet.c.i
+.PHONY : src/packet.i
+
+# target to preprocess a source file
+src/packet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/packet.dir/build.make CMakeFiles/packet.dir/src/packet.c.i
+.PHONY : src/packet.c.i
+
+src/packet.s: src/packet.c.s
+.PHONY : src/packet.s
+
+# target to generate assembly for a file
+src/packet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/packet.dir/build.make CMakeFiles/packet.dir/src/packet.c.s
+.PHONY : src/packet.c.s
+
+src/tcp_messg.o: src/tcp_messg.c.o
+.PHONY : src/tcp_messg.o
+
+# target to build an object file
+src/tcp_messg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_messg.dir/build.make CMakeFiles/tcp_messg.dir/src/tcp_messg.c.o
+.PHONY : src/tcp_messg.c.o
+
+src/tcp_messg.i: src/tcp_messg.c.i
+.PHONY : src/tcp_messg.i
+
+# target to preprocess a source file
+src/tcp_messg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_messg.dir/build.make CMakeFiles/tcp_messg.dir/src/tcp_messg.c.i
+.PHONY : src/tcp_messg.c.i
+
+src/tcp_messg.s: src/tcp_messg.c.s
+.PHONY : src/tcp_messg.s
+
+# target to generate assembly for a file
+src/tcp_messg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_messg.dir/build.make CMakeFiles/tcp_messg.dir/src/tcp_messg.c.s
+.PHONY : src/tcp_messg.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +274,20 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... can_messg"
 	@echo "... obd_main"
+	@echo "... packet"
+	@echo "... tcp_messg"
 	@echo "... src/can_messg.o"
 	@echo "... src/can_messg.i"
 	@echo "... src/can_messg.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/packet.o"
+	@echo "... src/packet.i"
+	@echo "... src/packet.s"
+	@echo "... src/tcp_messg.o"
+	@echo "... src/tcp_messg.i"
+	@echo "... src/tcp_messg.s"
 .PHONY : help
 
 

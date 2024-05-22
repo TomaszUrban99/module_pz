@@ -1,6 +1,7 @@
-CMakeFiles/obd_main.dir/src/main.c.o: \
- /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/main.c \
+CMakeFiles/tcp_messg.dir/src/tcp_messg.c.o: \
+ /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/tcp_messg.c \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/stdc-predef.h \
+ /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc/tcp_messg.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/stdio.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/libc-header-start.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/features.h \
@@ -84,37 +85,4 @@ CMakeFiles/obd_main.dir/src/main.c.o: \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/errno.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm/errno.h \
  /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/errno.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/errno-base.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/can.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/types.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm/types.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/int-ll64.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm/bitsperlong.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/bitsperlong.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/posix_types.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/stddef.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm/posix_types.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/posix_types.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/socket.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/linux/can/raw.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/time.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/time.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/types/struct_tm.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/types/struct_itimerspec.h \
- /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc/can_messg.h \
- /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc/packet.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/stdlib.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/waitflags.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/waitstatus.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/floatn.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/lib/gcc/armv6-rpi-linux-gnueabihf/13.2.0/include-fixed/bits/floatn-common.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/alloca.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/stdlib-float.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/math.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/math-vector.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/libm-simd-decl-stubs.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/flt-eval-method.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/fp-logb.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/fp-fast.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/mathcalls-helper-functions.h \
- /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/bits/mathcalls.h
+ /home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/armv6-rpi-linux-gnueabihf/sysroot/usr/include/asm-generic/errno-base.h

@@ -69,7 +69,7 @@ int interpet_ecu_answer_engine_speed ( struct can_frame *frame ){
         if ( frame->data[2] == ENGINE_SPEED_REQUEST ){
             
             /* Return engine speed, result is cast to int value */
-            return (int) (0.25 * (256 * frame->data[3] + frame->data[4]));
+            return (int) ((256 * frame->data[3] + frame->data[4]) / 4 );
         }
     }
     /* If ECU response is not positive return negative value */

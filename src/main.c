@@ -12,13 +12,16 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
+#include <time.h>
+
 #include "can_messg.h"
+#include "packet.h"
 
 int main(int argc, char** argv){
 
 
     /* Socket descriptor */
-    int socket_desc;
+    /*int socket_desc;
 
     struct  sockaddr_can address;
     struct ifreq ifr;
@@ -27,44 +30,61 @@ int main(int argc, char** argv){
         PF_CAN - can protocol family
         SOCK_RAW - choose CAN protocol
     */
-    socket_desc = socket(PF_CAN, SOCK_RAW, CAN_RAW);    
+    /*socket_desc = socket(PF_CAN, SOCK_RAW, CAN_RAW);   */
 
     /* Check if socket has been correctly assigned */
-    if ( socket_desc == -1 ){
+    /*if ( socket_desc == -1 ){
         fprintf(stderr, "socket() failed\n");
         return 1;
     }
 
-    strcpy(ifr.ifr_name, CAN_INTERFACE);
+    strcpy(ifr.ifr_name, CAN_INTERFACE);*/
     /*
         System call for manipulating underlying device
         parameters of special files.
     */
-    ioctl(socket_desc, SIOCGIFINDEX, &ifr);
+    /*ioctl(socket_desc, SIOCGIFINDEX, &ifr);
 
-    /* */
     address.can_family = AF_CAN;
-    address.can_ifindex = ifr.ifr_ifindex;
+    address.can_ifindex = ifr.ifr_ifindex;*/
 
     /* Set filters on incoming messages */
-    struct can_filter receive_filter;
+    /*struct can_filter receive_filter;
 
     receive_filter.can_id = CAN_CLIENT;
     receive_filter.can_mask = (CAN_EFF_FLAG | CAN_RTR_FLAG | CAN_SFF_MASK);
 
     setsockopt(socket_desc, SOL_CAN_RAW, 
-        CAN_RAW_FILTER, &receive_filter, sizeof(receive_filter));
+        CAN_RAW_FILTER, &receive_filter, sizeof(receive_filter));*/
 
     /* Bind a socket to CAN interface */
-    bind(socket_desc, (struct sockaddr *) &address, sizeof(address));
+    /*bind(socket_desc, (struct sockaddr *) &address, sizeof(address));
 
     struct can_frame frame;
+    struct can_frame receive_frame; */
 
-    receive_engine_speed(&frame, socket_desc);
+    /*
+    while (1){
 
-    printf("%s%d\n", "Obroty: ", interpet_ecu_answer_engine_speed(&frame));
+        generate_engine_speed_request_data(&frame);
+        send_engine_speed_request(&frame, socket_desc);
+        receive_engine_speed(&receive_frame, socket_desc);
 
-    print_can_frame(&frame);
+        interpet_ecu_answer_engine_speed(&receive_frame);
+        print_can_frame(&receive_frame);
+        sleep(5);
+    }
+    */
+
+    struct packet data_packet;
+
+    data_packet.lat_att = north;
+    data_packet.latitude = 98.000;
+   
+
+    char message_string[MESSAGE_LENGTH];
+
+    prepare_message(&data_packet,message_string);
 
     return 0;
 }

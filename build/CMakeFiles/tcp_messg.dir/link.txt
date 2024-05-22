@@ -1,0 +1,2 @@
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ar qc libtcp_messg.a CMakeFiles/tcp_messg.dir/src/tcp_messg.c.o
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ranlib libtcp_messg.a

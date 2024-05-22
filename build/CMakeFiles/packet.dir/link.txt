@@ -1,0 +1,2 @@
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ar qc libpacket.a CMakeFiles/packet.dir/src/packet.c.o
+/home/tomasz/opt/x-tools/armv6-rpi-linux-gnueabihf/bin/armv6-rpi-linux-gnueabihf-ranlib libpacket.a

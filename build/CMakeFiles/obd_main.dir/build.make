@@ -93,6 +93,8 @@ obd_main_EXTERNAL_OBJECTS =
 obd_main: CMakeFiles/obd_main.dir/src/main.c.o
 obd_main: CMakeFiles/obd_main.dir/build.make
 obd_main: libcan_messg.a
+obd_main: libtcp_messg.a
+obd_main: libpacket.a
 obd_main: /home/tomasz/opt/WiringPi/wiringPi/libwiringPi.so
 obd_main: /home/tomasz/opt/pigpio-master/build/libpigpio.so
 obd_main: CMakeFiles/obd_main.dir/link.txt

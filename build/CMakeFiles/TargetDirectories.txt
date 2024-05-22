@@ -1,4 +1,6 @@
+/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/packet.dir
 /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/can_messg.dir
+/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/tcp_messg.dir
 /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/obd_main.dir
 /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/edit_cache.dir
 /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build/CMakeFiles/rebuild_cache.dir

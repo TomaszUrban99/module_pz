@@ -42,11 +42,12 @@ int establish_connection ( char **argv, int *tcp_socket_descriptor ){
     return CONNECTED;
 }
 
+/* Send packet to remote server */
 int send_to_server ( int tcp_socket_descriptor, char *packet_to_send ){
 
+    /* Determine size of packet to send */
     int size_of_message = strlen(packet_to_send);
 
-    int bytes = send(tcp_socket_descriptor, packet_to_send, size_of_message, 0);
-
-    return bytes;
+    /* Send and return number of send bytes (or -1 in case of failure) */
+    return send(tcp_socket_descriptor, packet_to_send, size_of_message, 0);
 }

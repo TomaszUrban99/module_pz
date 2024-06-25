@@ -65,7 +65,7 @@ void float_to_array ( float number, int integer_part,
     }
 
     /* End of string character */
-    digit_array[integer_part+precison + 1] = '\0';
+    digit_array[integer_part+precison] = '\0';
 }
 
 void prepare_message ( struct packet *data_packet, char *message_string ){
@@ -128,7 +128,7 @@ void prepare_message ( struct packet *data_packet, char *message_string ){
     message_string[message_size] = ':';
     message_string[message_size+1] = '\0';
 
-    char velocity[6];
+    char velocity[4];
 
     float_to_array(data_packet->velocity,3,0,velocity);
 
@@ -138,18 +138,19 @@ void prepare_message ( struct packet *data_packet, char *message_string ){
     message_string[message_size] = ':';
     message_string[message_size+1] = '\0';
 
-    char engine_load[6];
+    char engine_load[4];
 
     float_to_array(data_packet->velocity,3,0,engine_load);
     
     strcat(message_string,engine_load);
     
     message_size = strlen(message_string);
-    message_string[message_size] = '?';
+    message_string[message_size] = ':';
+    message_size++;
 
+    message_string[message_size] = '?';
     message_string[message_size+1] = '\0';
     
     printf("%s\n", message_string);
-
 
 }

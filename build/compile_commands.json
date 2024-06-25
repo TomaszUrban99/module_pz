@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build",
+  "command": "/usr/bin/cc -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/include -I/home/tomasz/opt/WiringPi/wiringPi -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc -g -o CMakeFiles/packet.dir/src/packet.c.o -c /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/packet.c",
+  "file": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/packet.c"
+},
+{
+  "directory": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build",
+  "command": "/usr/bin/cc -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/include -I/home/tomasz/opt/WiringPi/wiringPi -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc -g -o CMakeFiles/can_messg.dir/src/can_messg.c.o -c /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/can_messg.c",
+  "file": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/can_messg.c"
+},
+{
+  "directory": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build",
+  "command": "/usr/bin/cc -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/include -I/home/tomasz/opt/WiringPi/wiringPi -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc -g -o CMakeFiles/tcp_messg.dir/src/tcp_messg.c.o -c /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/tcp_messg.c",
+  "file": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/tcp_messg.c"
+},
+{
+  "directory": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build",
+  "command": "/usr/bin/cc -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/include -I/home/tomasz/opt/WiringPi/wiringPi -I/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/inc -g -o CMakeFiles/obd_main.dir/src/main.c.o -c /home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/main.c",
+  "file": "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/src/main.c"
+}
+]

@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "obd_module",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "can_messg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-can_messg-Debug-ddec213ef541473257c6.json",
+					"name" : "can_messg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "obd_main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-obd_main-Debug-a59f5c790d8693fde6af.json",
+					"name" : "obd_main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "packet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-packet-Debug-f7574c3cf1693a618b63.json",
+					"name" : "packet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tcp_messg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tcp_messg-Debug-3258b7dd9fc0931f4c65.json",
+					"name" : "tcp_messg",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz/build",
+		"source" : "/home/tomasz/Documents/Studia/ProjektZespolowy/Oprogramowanie/module_pz"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

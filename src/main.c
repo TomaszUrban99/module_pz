@@ -20,76 +20,75 @@
 
 int main(int argc, char** argv){
 
+    struct can_data conn_par;
 
-    /* Socket descriptor */
-    /*int socket_desc;
+    /* Sockets descriptor */
+    
+        int socket_desc_can; /* can interface - to OBD */
+        int socket_desc_tcp; /* tcp interface - to remote server */
 
-    struct  sockaddr_can address;
-    struct ifreq ifr;
+    /*------------------------------------------------------------*/
 
-    /*!
-        PF_CAN - can protocol family
-        SOCK_RAW - choose CAN protocol
-    */
-    /*socket_desc = socket(PF_CAN, SOCK_RAW, CAN_RAW);   */
+    /* Establish CAN connection */
 
-    /* Check if socket has been correctly assigned */
-    /*if ( socket_desc == -1 ){
-        fprintf(stderr, "socket() failed\n");
-        return 1;
+    if ( establish_can_connection(argv[3], &socket_desc_can, &conn_par) < 0 ){
+        fprintf(stderr,"failed to connect to CAN bus");
+        return -1;
     }
 
-    strcpy(ifr.ifr_name, CAN_INTERFACE);*/
-    /*
-        System call for manipulating underlying device
-        parameters of special files.
-    */
-    /*ioctl(socket_desc, SIOCGIFINDEX, &ifr);
-
-    address.can_family = AF_CAN;
-    address.can_ifindex = ifr.ifr_ifindex;*/
-
-    /* Set filters on incoming messages */
-    /*struct can_filter receive_filter;
-
-    receive_filter.can_id = CAN_CLIENT;
-    receive_filter.can_mask = (CAN_EFF_FLAG | CAN_RTR_FLAG | CAN_SFF_MASK);
-
-    setsockopt(socket_desc, SOL_CAN_RAW, 
-        CAN_RAW_FILTER, &receive_filter, sizeof(receive_filter));*/
-
-    /* Bind a socket to CAN interface */
-    /*bind(socket_desc, (struct sockaddr *) &address, sizeof(address));
+    /* Establish TCP connection */
+    if ( establish_connection(argv,&socket_desc_tcp) < 0){
+        return -1;
+    };
 
     struct can_frame frame;
-    struct can_frame receive_frame; */
-
-    /*
-    while (1){
-
-        generate_engine_speed_request_data(&frame);
-        send_engine_speed_request(&frame, socket_desc);
-        receive_engine_speed(&receive_frame, socket_desc);
-
-        interpet_ecu_answer_engine_speed(&receive_frame);
-        print_can_frame(&receive_frame);
-        sleep(5);
-    }
-    */
+    struct can_frame receive_frame;
 
     struct packet data_packet;
-
+    
     data_packet.lat_att = north;
     data_packet.latitude = 8.000;
-   
 
-    char message_string[MESSAGE_LENGTH];
+    data_packet.long_att = west;
+    data_packet.longitude = 15.000;
 
-    int socket_desc;
+    while (1){
 
-    prepare_message(&data_packet,message_string);
-    establish_connection(argv,&socket_desc);
-    printf("%d\n", send_to_server(socket_desc,message_string));
+
+    /* ------------------------- CAN REQUESTS -------------------------------------- */
+        
+        /* ---------------------- ENGINE RPM --------------------------------------- */
+            
+            printf("%d\n",send_engine_speed_request(&frame, socket_desc_can));
+        
+            receive_engine_speed(&receive_frame, socket_desc_can);
+            data_packet.engine_rpm = interpet_ecu_answer_engine_speed(&receive_frame);
+
+            printf("%s%d\n", "Obroty silnika: ", data_packet.engine_rpm);
+
+            printf("%d\n",send_velocity_request(&frame, socket_desc_can));
+
+            receive_velocity(&receive_frame, socket_desc_can);
+            data_packet.velocity = interpet_ecu_answer_velocity(&receive_frame);
+            printf("%s%d\n", "Predkosc: ", data_packet.velocity);
+
+            printf("%d\n",send_load_request(&frame, socket_desc_can));
+            receive_load(&receive_frame, socket_desc_can);
+            data_packet.engine_load = interpet_ecu_answer_load(&receive_frame);
+            printf("%s%d\n", "Obciazenie: ", data_packet.engine_load);
+
+        
+    /* ------------------------ SEND TO SERVER ------------------------------------ */
+            
+        /* ---------------- PREPARE STRING MESSAGE -------------------------------- */
+            
+            char message_string[MESSAGE_LENGTH];
+            prepare_message(&data_packet,message_string);
+            printf("%d\n", send_to_server(socket_desc_tcp,message_string));
+
+    /* --------------------------------------------------------------------------- */
+        sleep(10);
+    }
 
     return 0;
 }

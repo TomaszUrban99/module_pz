@@ -7,7 +7,7 @@
 #include <math.h>
 
 #define LOCATION_LENGTH 10
-#define MESSAGE_LENGTH 50
+#define MESSAGE_LENGTH 51
 
 enum world_attitude { north, south, east, west };
 
